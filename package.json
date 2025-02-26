@@ -56,7 +56,7 @@
     "yup": "^1.6.1"
   },
   "scripts": {
-    "build": "react-scripts build",
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
