@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { filterConversations } from "./../../store/action-creators";
 import { AppState } from "../../store";
 import { getTranslation } from "./../../utils/localUtils";
+import CreateBroadcastButton from "./createBroadcastMessage";
 
 interface ConvosContainerProps {
   client?: Client;
@@ -39,10 +40,19 @@ const ConversationsContainer: React.FC<ConvosContainerProps> = (
       }
     >
       <Box style={styles.newConvoButton}>
-        <CreateConversationButton
-          client={props.client}
-          collapsed={listHidden}
-        />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "0.5rem",
+          }}
+        >
+          <CreateConversationButton
+            client={props.client}
+            collapsed={listHidden}
+          />
+          <CreateBroadcastButton client={props.client} collapsed={listHidden} />
+        </div>
         <Box marginTop="space60">
           <Input
             aria-describedby="convo_string_search"

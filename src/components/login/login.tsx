@@ -29,7 +29,7 @@ async function login(
     }
 
     localStorage.setItem("username", username);
-    localStorage.setItem("password", password);
+    localStorage.setItem("token", token);
     setToken(token);
 
     return "";

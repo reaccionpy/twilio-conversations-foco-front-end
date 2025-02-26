@@ -70,7 +70,7 @@ const AppContainer: React.FC = () => {
   sidRef.current = sid;
 
   const username = localStorage.getItem("username");
-  const password = localStorage.getItem("password");
+  // const password = localStorage.getItem("password");
 
   const dispatch = useDispatch();
   const {
@@ -121,7 +121,7 @@ const AppContainer: React.FC = () => {
     setClient(client);
 
     const fcmInit = async () => {
-      await subscribeFcmNotifications(client);
+      // await subscribeFcmNotifications(client);
     };
 
     fcmInit().catch(() => {
@@ -231,20 +231,22 @@ const AppContainer: React.FC = () => {
       }
     });
 
-    client.on("tokenAboutToExpire", async () => {
-      if (username && password) {
-        const token = await getToken(username, password);
-        await client.updateToken(token);
-        login(token);
-      }
-    });
+    // client.on("tokenAboutToExpire", async () => {
+    //   if (username && password) {
+    //     const token = await getToken(username, password);
+    //     await client.updateToken(token);
+    //     login(token);
+    //   }
+    // });
 
     client.on("tokenExpired", async () => {
-      if (username && password) {
-        const token = await getToken(username, password);
-        login(token);
-        setClientIteration((x) => x + 1);
-      }
+      // if (username && password) {
+      //   const token = await getToken(username, password);
+      //   login(token);
+      //   setClientIteration((x) => x + 1);
+      // }
+
+      logout();
     });
 
     client.on("connectionStateChanged", (state) => {

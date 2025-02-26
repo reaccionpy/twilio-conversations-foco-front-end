@@ -60,7 +60,7 @@ const reducers = (
 ): ReturnType<typeof appReducer> => {
   if (action.type === ActionType.LOGOUT) {
     localStorage.removeItem("username");
-    localStorage.removeItem("password");
+    localStorage.removeItem("token");
     return appReducer(initialState, action);
   }
 

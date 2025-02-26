@@ -36,6 +36,7 @@ export const translations: Translations = {
     connecting: "Connecting",
     offline: "Offline",
     createNewConvo: "Create New Conversation",
+    createNewBroadcast: "Create New Broadcast",
     newConvo: "New Conversation",
     convoName: "Conversation name",
     convoDescription: "Enter conversation name",
