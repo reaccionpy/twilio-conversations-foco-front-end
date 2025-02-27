@@ -158,8 +158,8 @@ export async function getToken(
   username: string,
   password: string
 ): Promise<string> {
-  const requestAddress = process.env
-    .REACT_APP_ACCESS_TOKEN_SERVICE_URL as string;
+  const requestAddress = import.meta.env
+    .VITE_REACT_APP_ACCESS_TOKEN_SERVICE_URL as string;
   if (!requestAddress) {
     throw new Error(
       "REACT_APP_ACCESS_TOKEN_SERVICE_URL is not configured, cannot login"
